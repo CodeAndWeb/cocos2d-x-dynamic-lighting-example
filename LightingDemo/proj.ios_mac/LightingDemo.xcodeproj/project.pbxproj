@@ -68,6 +68,14 @@
 		AA0C9BFF1B00FE9C001A533F /* Effect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA0C9BF91B00FE9C001A533F /* Effect.cpp */; };
 		AA0C9C001B00FE9C001A533F /* EffectSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA0C9BFB1B00FE9C001A533F /* EffectSprite.cpp */; };
 		AA0C9C011B00FE9C001A533F /* LightEffect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA0C9BFD1B00FE9C001A533F /* LightEffect.cpp */; };
+		AA71DA981B01012400569997 /* Effect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA0C9BF91B00FE9C001A533F /* Effect.cpp */; };
+		AA71DA991B01012400569997 /* EffectSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA0C9BFB1B00FE9C001A533F /* EffectSprite.cpp */; };
+		AA71DA9A1B01012400569997 /* LightEffect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA0C9BFD1B00FE9C001A533F /* LightEffect.cpp */; };
+		AA71DA9B1B01019700569997 /* spritesheet_n.png in Resources */ = {isa = PBXBuildFile; fileRef = AA0C9BEE1B00FDBC001A533F /* spritesheet_n.png */; };
+		AA71DA9C1B01019700569997 /* spritesheet.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA0C9BEF1B00FDBC001A533F /* spritesheet.plist */; };
+		AA71DA9D1B01019700569997 /* spritesheet.png in Resources */ = {isa = PBXBuildFile; fileRef = AA0C9BF01B00FDBC001A533F /* spritesheet.png */; };
+		AA71DA9E1B01019700569997 /* lightbulb.png in Resources */ = {isa = PBXBuildFile; fileRef = AA0C9BF41B00FE93001A533F /* lightbulb.png */; };
+		AA71DA9F1B01019700569997 /* pointlight.frag in Resources */ = {isa = PBXBuildFile; fileRef = AA0C9BF51B00FE93001A533F /* pointlight.frag */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
@@ -518,6 +526,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA71DA9B1B01019700569997 /* spritesheet_n.png in Resources */,
+				AA71DA9C1B01019700569997 /* spritesheet.plist in Resources */,
+				AA71DA9D1B01019700569997 /* spritesheet.png in Resources */,
+				AA71DA9E1B01019700569997 /* lightbulb.png in Resources */,
+				AA71DA9F1B01019700569997 /* pointlight.frag in Resources */,
 				46880B8219C43A67006E1F66 /* HelloWorld.png in Resources */,
 				503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */,
 				3EACC99019EE6D4300EB3C5E /* res in Resources */,
@@ -549,6 +562,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA71DA981B01012400569997 /* Effect.cpp in Sources */,
+				AA71DA991B01012400569997 /* EffectSprite.cpp in Sources */,
+				AA71DA9A1B01012400569997 /* LightEffect.cpp in Sources */,
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
 				46880B8B19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
