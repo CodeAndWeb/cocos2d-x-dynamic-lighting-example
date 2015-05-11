@@ -63,6 +63,11 @@
 		AA0C9BF11B00FDBC001A533F /* spritesheet_n.png in Resources */ = {isa = PBXBuildFile; fileRef = AA0C9BEE1B00FDBC001A533F /* spritesheet_n.png */; };
 		AA0C9BF21B00FDBC001A533F /* spritesheet.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA0C9BEF1B00FDBC001A533F /* spritesheet.plist */; };
 		AA0C9BF31B00FDBC001A533F /* spritesheet.png in Resources */ = {isa = PBXBuildFile; fileRef = AA0C9BF01B00FDBC001A533F /* spritesheet.png */; };
+		AA0C9BF61B00FE93001A533F /* lightbulb.png in Resources */ = {isa = PBXBuildFile; fileRef = AA0C9BF41B00FE93001A533F /* lightbulb.png */; };
+		AA0C9BF71B00FE93001A533F /* pointlight.frag in Resources */ = {isa = PBXBuildFile; fileRef = AA0C9BF51B00FE93001A533F /* pointlight.frag */; };
+		AA0C9BFF1B00FE9C001A533F /* Effect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA0C9BF91B00FE9C001A533F /* Effect.cpp */; };
+		AA0C9C001B00FE9C001A533F /* EffectSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA0C9BFB1B00FE9C001A533F /* EffectSprite.cpp */; };
+		AA0C9C011B00FE9C001A533F /* LightEffect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA0C9BFD1B00FE9C001A533F /* LightEffect.cpp */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
@@ -158,6 +163,14 @@
 		AA0C9BEE1B00FDBC001A533F /* spritesheet_n.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spritesheet_n.png; sourceTree = "<group>"; };
 		AA0C9BEF1B00FDBC001A533F /* spritesheet.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = spritesheet.plist; sourceTree = "<group>"; };
 		AA0C9BF01B00FDBC001A533F /* spritesheet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spritesheet.png; sourceTree = "<group>"; };
+		AA0C9BF41B00FE93001A533F /* lightbulb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lightbulb.png; sourceTree = "<group>"; };
+		AA0C9BF51B00FE93001A533F /* pointlight.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = pointlight.frag; sourceTree = "<group>"; };
+		AA0C9BF91B00FE9C001A533F /* Effect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Effect.cpp; sourceTree = "<group>"; };
+		AA0C9BFA1B00FE9C001A533F /* Effect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Effect.h; sourceTree = "<group>"; };
+		AA0C9BFB1B00FE9C001A533F /* EffectSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EffectSprite.cpp; sourceTree = "<group>"; };
+		AA0C9BFC1B00FE9C001A533F /* EffectSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EffectSprite.h; sourceTree = "<group>"; };
+		AA0C9BFD1B00FE9C001A533F /* LightEffect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LightEffect.cpp; sourceTree = "<group>"; };
+		AA0C9BFE1B00FE9C001A533F /* LightEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LightEffect.h; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -290,6 +303,8 @@
 				46880B7619C43A67006E1F66 /* CloseNormal.png */,
 				46880B7719C43A67006E1F66 /* CloseSelected.png */,
 				46880B7A19C43A67006E1F66 /* HelloWorld.png */,
+				AA0C9BF41B00FE93001A533F /* lightbulb.png */,
+				AA0C9BF51B00FE93001A533F /* pointlight.frag */,
 			);
 			name = Resources;
 			path = ../Resources;
@@ -298,6 +313,7 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				AA0C9BF81B00FE9C001A533F /* EffectSprite */,
 				46880B8419C43A87006E1F66 /* AppDelegate.cpp */,
 				46880B8519C43A87006E1F66 /* AppDelegate.h */,
 				46880B8619C43A87006E1F66 /* HelloWorldScene.cpp */,
@@ -353,6 +369,19 @@
 			name = Icons;
 			path = ios;
 			sourceTree = SOURCE_ROOT;
+		};
+		AA0C9BF81B00FE9C001A533F /* EffectSprite */ = {
+			isa = PBXGroup;
+			children = (
+				AA0C9BF91B00FE9C001A533F /* Effect.cpp */,
+				AA0C9BFA1B00FE9C001A533F /* Effect.h */,
+				AA0C9BFB1B00FE9C001A533F /* EffectSprite.cpp */,
+				AA0C9BFC1B00FE9C001A533F /* EffectSprite.h */,
+				AA0C9BFD1B00FE9C001A533F /* LightEffect.cpp */,
+				AA0C9BFE1B00FE9C001A533F /* LightEffect.h */,
+			);
+			path = EffectSprite;
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -461,6 +490,7 @@
 				AA0C9BF21B00FDBC001A533F /* spritesheet.plist in Resources */,
 				5087E78317EB970100C73F5D /* Icon-152.png in Resources */,
 				AA0C9BF31B00FDBC001A533F /* spritesheet.png in Resources */,
+				AA0C9BF71B00FE93001A533F /* pointlight.frag in Resources */,
 				46880B8119C43A67006E1F66 /* HelloWorld.png in Resources */,
 				46880B7D19C43A67006E1F66 /* CloseSelected.png in Resources */,
 				5087E77D17EB970100C73F5D /* Default-568h@2x.png in Resources */,
@@ -473,6 +503,7 @@
 				50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */,
 				50EF629617ECD46A001EB2F8 /* Icon-40.png in Resources */,
 				5087E78217EB970100C73F5D /* Icon-144.png in Resources */,
+				AA0C9BF61B00FE93001A533F /* lightbulb.png in Resources */,
 				3EACC98F19EE6D4300EB3C5E /* res in Resources */,
 				50EF629817ECD46A001EB2F8 /* Icon-80.png in Resources */,
 				5087E78417EB970100C73F5D /* Icon-57.png in Resources */,
@@ -505,8 +536,11 @@
 			files = (
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				46880B8A19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
+				AA0C9C001B00FE9C001A533F /* EffectSprite.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
+				AA0C9C011B00FE9C001A533F /* LightEffect.cpp in Sources */,
+				AA0C9BFF1B00FE9C001A533F /* Effect.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

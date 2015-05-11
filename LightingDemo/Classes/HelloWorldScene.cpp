@@ -52,14 +52,26 @@ bool HelloWorld::init()
 
     sprite->setEffect(_effect);
 
+    _lightSprite = Sprite::create("lightbulb.png");
+    _lightSprite->setPosition(lightPos.x, lightPos.y);
+    this->addChild(_lightSprite);
+    
+    auto listerner = EventListenerTouchAllAtOnce::create();
+    listerner->onTouchesBegan = CC_CALLBACK_2(HelloWorld::handleTouches, this);
+    listerner->onTouchesMoved = CC_CALLBACK_2(HelloWorld::handleTouches, this);
+    listerner->onTouchesEnded = CC_CALLBACK_2(HelloWorld::handleTouches, this);
+    _eventDispatcher->addEventListenerWithSceneGraphPriority(listerner, this);
+    
     return true;
 }
 
-void HelloWorld::menuCloseCallback(Ref* pSender)
+void HelloWorld::handleTouches(const std::vector<Touch *> &touches, cocos2d::Event *)
 {
-    Director::getInstance()->end();
-
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-    exit(0);
-#endif
+    for (auto &touch: touches)
+    {
+        Point pos = touch->getLocation();
+        _lightSprite->setPosition(pos);
+        _lightPos.set(pos.x, pos.y, _lightPos.z);
+        _effect->setLightPos(_lightPos);
+    }
 }
