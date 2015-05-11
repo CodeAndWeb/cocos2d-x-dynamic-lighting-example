@@ -3,6 +3,8 @@
 
 #include "cocos2d.h"
 
+class LightEffect;
+
 class HelloWorld : public cocos2d::Layer
 {
 public:
@@ -17,6 +19,14 @@ public:
     
     // implement the "static create()" method manually
     CREATE_FUNC(HelloWorld);
+
+public:
+    void handleTouches(const std::vector<cocos2d::Touch *> &touches, cocos2d::Event *unused);
+
+protected:
+    cocos2d::Vec3 _lightPos;
+    LightEffect *_effect;
+    cocos2d::Sprite *_lightSprite;
 };
 
 #endif // __HELLOWORLD_SCENE_H__

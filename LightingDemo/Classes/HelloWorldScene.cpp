@@ -1,4 +1,6 @@
 #include "HelloWorldScene.h"
+#include "EffectSprite/LightEffect.h"
+#include "EffectSprite/EffectSprite.h"
 
 USING_NS_CC;
 
@@ -33,7 +35,7 @@ bool HelloWorld::init()
         animFrames.pushBack(spritecache->getSpriteFrameByName(str));
     }
     
-    auto sprite = Sprite::createWithSpriteFrame(animFrames.front());
+    auto sprite = EffectSprite::createWithSpriteFrame(animFrames.front());
     
     Animation *animation = Animation::createWithSpriteFrames(animFrames, 1.0f/15);
     sprite->runAction(RepeatForever::create(Animate::create(animation)));
@@ -41,6 +43,15 @@ bool HelloWorld::init()
     
     addChild(sprite);
     
+    _effect = LightEffect::create("spritesheet_n.png");
+    _effect->retain();
+    
+    Vec3 lightPos(200, 200, 100);
+    _effect->setLightPos(lightPos);
+    _effect->setLightCutoffRadius(1000);
+
+    sprite->setEffect(_effect);
+
     return true;
 }
 
