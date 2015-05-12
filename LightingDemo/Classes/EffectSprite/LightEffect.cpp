@@ -22,7 +22,10 @@
  THE SOFTWARE.
  ****************************************************************************/
 
-/* based on cocos2d-x-3.6/tests/cpp-tests/Classes/ShaderTest/ShaderTest2.cpp */
+/*
+ * based on cocos2d-x-3.6/tests/cpp-tests/Classes/ShaderTest/ShaderTest2.cpp
+ * extended by CodeAndWeb GmbH https://www.codeandweb.com
+ */
 
 #include "LightEffect.h"
 #include "EffectSprite.h"
