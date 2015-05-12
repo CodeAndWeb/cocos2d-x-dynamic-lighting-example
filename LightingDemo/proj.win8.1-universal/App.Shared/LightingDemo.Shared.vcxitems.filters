@@ -14,6 +14,15 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)Cocos2dRenderer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)OpenGLES.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)OpenGLESPage.xaml.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\Classes\EffectSprite\Effect.cpp">
+      <Filter>Classes\EffectSprite</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\Classes\EffectSprite\EffectSprite.cpp">
+      <Filter>Classes\EffectSprite</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\Classes\EffectSprite\LightEffect.cpp">
+      <Filter>Classes\EffectSprite</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="$(MSBuildThisFileDirectory)App.xaml" />
@@ -21,6 +30,9 @@
   <ItemGroup>
     <Filter Include="Classes">
       <UniqueIdentifier>{38ad799c-8c3c-44a2-8e41-516c8f62f556}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\EffectSprite">
+      <UniqueIdentifier>{8ac71e75-202d-4cf6-aaea-4d2c227b7829}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -35,6 +47,15 @@
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)OpenGLES.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)OpenGLESPage.xaml.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\Classes\EffectSprite\Effect.h">
+      <Filter>Classes\EffectSprite</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\Classes\EffectSprite\EffectSprite.h">
+      <Filter>Classes\EffectSprite</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\Classes\EffectSprite\LightEffect.h">
+      <Filter>Classes\EffectSprite</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Page Include="$(MSBuildThisFileDirectory)OpenGLESPage.xaml" />
