@@ -46,14 +46,14 @@ bool HelloWorld::init()
     _effect = LightEffect::create("spritesheet_n.png");
     _effect->retain();
     
-    Vec3 lightPos(200, 200, 100);
-    _effect->setLightPos(lightPos);
+    _lightPos = Vec3(200, 200, 100);
+    _effect->setLightPos(_lightPos);
     _effect->setLightCutoffRadius(1000);
 
     sprite->setEffect(_effect);
 
     _lightSprite = Sprite::create("lightbulb.png");
-    _lightSprite->setPosition(lightPos.x, lightPos.y);
+    _lightSprite->setPosition(_lightPos.x, _lightPos.y);
     this->addChild(_lightSprite);
     
     auto listerner = EventListenerTouchAllAtOnce::create();
