@@ -24,17 +24,18 @@ bool HelloWorld::init()
     if (!Layer::init())
         return false;
     
-    _effect = LightEffect::create();
-    _effect->retain();
-
-    _lightPos = Vec3(200, 200, 100);
-    _effect->setLightPos(_lightPos);
-    _effect->setLightCutoffRadius(1000);
-
     _screenW = Director::getInstance()->getWinSize().width;
     _screenH = Director::getInstance()->getWinSize().height;
     _scale = _screenW / 1920;
     
+    _effect = LightEffect::create();
+    _effect->retain();
+
+    _lightPos = Vec3(_screenW-100, _screenH-100, 100);
+    _effect->setLightPos(_lightPos);
+    _effect->setLightCutoffRadius(1000);
+    _effect->setBrightness(2.0);
+
     initBackground();
     
     auto spritecache = SpriteFrameCache::getInstance();

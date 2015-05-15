@@ -12,6 +12,7 @@ public:
     void setLightPos(const cocos2d::Vec3& pos);
     void setLightColor(const cocos2d::Color3B& color);
     void setAmbientLightColor(const cocos2d::Color3B& color);
+    void setBrightness(float value);
     void setLightCutoffRadius(float value);
     void setLightHalfRadius(float value);
     
@@ -28,6 +29,7 @@ protected:
     cocos2d::Color3B _ambientLightColor;
     float _lightCutoffRadius;
     float _lightHalfRadius;
+    float _brightness;
 };
 
 #endif

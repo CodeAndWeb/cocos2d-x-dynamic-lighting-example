@@ -75,6 +75,12 @@ void LightEffect::setAmbientLightColor(const Color3B &color)
     getGLProgramState()->setUniformVec3("u_ambientColor", Vec3(_ambientLightColor.r,_ambientLightColor.g,_ambientLightColor.b)/255.0f);
 }
 
+void LightEffect::setBrightness(float value)
+{
+    _brightness = value;
+    getGLProgramState()->setUniformFloat("u_brightness", value);
+}
+
 void LightEffect::setLightCutoffRadius(float value)
 {
     _lightCutoffRadius = std::max(1.0f, value);

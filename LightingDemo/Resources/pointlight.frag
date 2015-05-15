@@ -14,6 +14,7 @@ uniform vec2 u_spriteSizeRelToSheet;
 uniform vec2 u_spriteOffset;
 uniform int  u_spriteRotated;
 
+uniform float  u_brightness;
 uniform float u_cutoffRadius;
 uniform float u_halfRadius;
 
@@ -42,6 +43,6 @@ void main(void)
     float falloffSelect = step(intercept, lightDist);
     float falloffTerm = (1.0 - falloffSelect) * falloffTermNear + falloffSelect * falloffTermFar;
     
-	vec3 diffuse = normDotPosToLight * falloffTerm * u_lightColor;
+	vec3 diffuse = normDotPosToLight * u_brightness * falloffTerm * u_lightColor;
     gl_FragColor = vec4(texColor.rgb * (diffuse + u_ambientColor), texColor.a);
 }
