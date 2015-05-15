@@ -24,33 +24,39 @@ bool HelloWorld::init()
     if (!Layer::init())
         return false;
     
+    _effect = LightEffect::create();
+    _effect->retain();
+
+    _lightPos = Vec3(200, 200, 100);
+    _effect->setLightPos(_lightPos);
+    _effect->setLightCutoffRadius(1000);
+
+    _screenW = Director::getInstance()->getWinSize().width;
+    _screenH = Director::getInstance()->getWinSize().height;
+    _scale = _screenW / 1920;
+    
+    initBackground();
+    
     auto spritecache = SpriteFrameCache::getInstance();
     spritecache->addSpriteFramesWithFile("spritesheet.plist");
 
     Vector<SpriteFrame*> animFrames;
     char str[100];
-    for(int i = 1; i <= 16; i++)
+    for(int i = 1; i <= 8; i++)
     {
-        sprintf(str, "capguy/%04d.png", i);
+        sprintf(str, "character/%02d.png", i);
         animFrames.pushBack(spritecache->getSpriteFrameByName(str));
     }
     
     auto sprite = EffectSprite::createWithSpriteFrame(animFrames.front());
     
-    Animation *animation = Animation::createWithSpriteFrames(animFrames, 1.0f/15);
+    Animation *animation = Animation::createWithSpriteFrames(animFrames, 1.0f/8);
     sprite->runAction(RepeatForever::create(Animate::create(animation)));
-    sprite->setPosition(Director::getInstance()->getWinSize() / 2);
+    sprite->setPosition(_screenW / 2.0, _screenH / 2.0 - 75.0 * _scale);
+    sprite->setEffect(_effect, "spritesheet_n.png");
+    sprite->setScale(_scale);
     
     addChild(sprite);
-    
-    _effect = LightEffect::create();
-    _effect->retain();
-    
-    _lightPos = Vec3(200, 200, 100);
-    _effect->setLightPos(_lightPos);
-    _effect->setLightCutoffRadius(1000);
-
-    sprite->setEffect(_effect, "spritesheet_n.png");
 
     _lightSprite = Sprite::create("lightbulb.png");
     _lightSprite->setPosition(_lightPos.x, _lightPos.y);
@@ -61,7 +67,7 @@ bool HelloWorld::init()
     listerner->onTouchesMoved = CC_CALLBACK_2(HelloWorld::handleTouches, this);
     listerner->onTouchesEnded = CC_CALLBACK_2(HelloWorld::handleTouches, this);
     _eventDispatcher->addEventListenerWithSceneGraphPriority(listerner, this);
-    
+
     return true;
 }
 
@@ -74,4 +80,42 @@ void HelloWorld::handleTouches(const std::vector<Touch *> &touches, cocos2d::Eve
         _lightPos.set(pos.x, pos.y, _lightPos.z);
         _effect->setLightPos(_lightPos);
     }
+}
+
+
+void HelloWorld::initBackground()
+{
+    addBackgroundTile("res/background_01.png", 0, 100);
+    addBackgroundTile("res/background_01.png", 1920, 100);
+    addBackgroundTile("res/foreground_01.png", 0, 200, "res/foreground_01_n.png");
+    addBackgroundTile("res/foreground_02.png", 1920, 200, "res/foreground_02_n.png");
+}
+
+
+EffectSprite *HelloWorld::addBackgroundTile(const std::string &spriteFile, float offsetX, float speed, const std::string &normalsFile)
+{
+    auto background = EffectSprite::create(spriteFile);
+    if (!normalsFile.empty())
+    {
+        background->setEffect(_effect, normalsFile);
+    }
+    else
+    {
+        background->setColor(_effect->getAmbientLightColor());
+    }
+
+    offsetX *= _scale;
+    float offsetY = (_screenH - background->getContentSize().height * _scale) / 2.0f;
+
+    background->setAnchorPoint(Vec2(0,0));
+    background->setScale(_scale);
+    addChild(background);
+    
+    auto a1 = MoveTo::create(0, Vec2(offsetX, offsetY));
+    auto a2 = MoveTo::create((_screenW + offsetX) / speed, Vec2(-_screenW, offsetY));
+    auto a3 = MoveTo::create(0, Vec2(_screenW, offsetY));
+    auto a4 = MoveTo::create((_screenW - offsetX) / speed, Vec2(offsetX, offsetY));
+    background->runAction(RepeatForever::create(Sequence::create(a1, a2, a3, a4, nullptr)));
+    
+    return background;
 }

@@ -16,6 +16,9 @@ public:
     void setLightHalfRadius(float value);
     
     void prepareForRender(cocos2d::Sprite *sprite, cocos2d::Texture2D *normalmap);
+    
+    cocos2d::Color3B getLightColor() const { return _lightColor; }
+    cocos2d::Color3B getAmbientLightColor() const { return _ambientLightColor; }
 
 protected:
     bool init();

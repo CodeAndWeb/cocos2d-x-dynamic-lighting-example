@@ -4,213 +4,109 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>capguy/0001.png</key>
+            <key>character/01.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,322},{157,314}}</string>
+                <string>{{2,518},{248,512}}</string>
                 <key>offset</key>
-                <string>{0,1}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{15,4},{157,314}}</string>
-                <key>sourceSize</key>
-                <string>{187,324}</string>
-            </dict>
-            <key>capguy/0002.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{2,322},{157,314}}</string>
-                <key>offset</key>
-                <string>{0,1}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{15,4},{157,314}}</string>
-                <key>sourceSize</key>
-                <string>{187,324}</string>
-            </dict>
-            <key>capguy/0003.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{318,314},{167,302}}</string>
-                <key>offset</key>
-                <string>{-10,3}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{0,8},{167,302}}</string>
-                <key>sourceSize</key>
-                <string>{187,324}</string>
-            </dict>
-            <key>capguy/0004.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{318,314},{167,302}}</string>
-                <key>offset</key>
-                <string>{-10,3}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{0,8},{167,302}}</string>
-                <key>sourceSize</key>
-                <string>{187,324}</string>
-            </dict>
-            <key>capguy/0005.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{584,2},{151,306}}</string>
-                <key>offset</key>
-                <string>{8,7}</string>
+                <string>{17,-15}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{26,2},{151,306}}</string>
+                <string>{{218,84},{248,512}}</string>
                 <key>sourceSize</key>
-                <string>{187,324}</string>
+                <string>{650,650}</string>
             </dict>
-            <key>capguy/0006.png</key>
+            <key>character/02.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{584,2},{151,306}}</string>
+                <string>{{180,2},{234,496}}</string>
                 <key>offset</key>
-                <string>{8,7}</string>
+                <string>{3,-12}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{26,2},{151,306}}</string>
+                <string>{{211,89},{234,496}}</string>
                 <key>sourceSize</key>
-                <string>{187,324}</string>
+                <string>{650,650}</string>
             </dict>
-            <key>capguy/0007.png</key>
+            <key>character/03.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{737,2},{139,304}}</string>
+                <string>{{252,500},{168,506}}</string>
                 <key>offset</key>
-                <string>{19,8}</string>
+                <string>{2,-13}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{43,2},{139,304}}</string>
+                <string>{{243,85},{168,506}}</string>
                 <key>sourceSize</key>
-                <string>{187,324}</string>
+                <string>{650,650}</string>
             </dict>
-            <key>capguy/0008.png</key>
+            <key>character/04.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{737,2},{139,304}}</string>
+                <string>{{182,1032},{158,508}}</string>
                 <key>offset</key>
-                <string>{19,8}</string>
+                <string>{0,-9}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{43,2},{139,304}}</string>
+                <string>{{246,80},{158,508}}</string>
                 <key>sourceSize</key>
-                <string>{187,324}</string>
+                <string>{650,650}</string>
             </dict>
-            <key>capguy/0009.png</key>
+            <key>character/05.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{310,2},{137,310}}</string>
+                <string>{{2,1544},{178,502}}</string>
                 <key>offset</key>
-                <string>{9,4}</string>
+                <string>{4,-14}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{34,3},{137,310}}</string>
+                <string>{{240,88},{178,502}}</string>
                 <key>sourceSize</key>
-                <string>{187,324}</string>
+                <string>{650,650}</string>
             </dict>
-            <key>capguy/0010.png</key>
+            <key>character/06.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{310,2},{137,310}}</string>
+                <string>{{182,1542},{202,504}}</string>
                 <key>offset</key>
-                <string>{9,4}</string>
+                <string>{7,-17}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{34,3},{137,310}}</string>
+                <string>{{231,90},{202,504}}</string>
                 <key>sourceSize</key>
-                <string>{187,324}</string>
+                <string>{650,650}</string>
             </dict>
-            <key>capguy/0011.png</key>
+            <key>character/07.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{449,2},{133,310}}</string>
+                <string>{{2,1032},{178,510}}</string>
                 <key>offset</key>
-                <string>{3,-1}</string>
+                <string>{2,-13}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{30,8},{133,310}}</string>
+                <string>{{238,83},{178,510}}</string>
                 <key>sourceSize</key>
-                <string>{187,324}</string>
+                <string>{650,650}</string>
             </dict>
-            <key>capguy/0012.png</key>
+            <key>character/08.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{449,2},{133,310}}</string>
+                <string>{{2,2},{176,514}}</string>
                 <key>offset</key>
-                <string>{3,-1}</string>
+                <string>{-9,-15}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{30,8},{133,310}}</string>
+                <string>{{228,83},{176,514}}</string>
                 <key>sourceSize</key>
-                <string>{187,324}</string>
-            </dict>
-            <key>capguy/0013.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{163,2},{145,312}}</string>
-                <key>offset</key>
-                <string>{11,3}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{32,3},{145,312}}</string>
-                <key>sourceSize</key>
-                <string>{187,324}</string>
-            </dict>
-            <key>capguy/0014.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{163,2},{145,312}}</string>
-                <key>offset</key>
-                <string>{11,3}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{32,3},{145,312}}</string>
-                <key>sourceSize</key>
-                <string>{187,324}</string>
-            </dict>
-            <key>capguy/0015.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{2,2},{159,318}}</string>
-                <key>offset</key>
-                <string>{9,2}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{23,1},{159,318}}</string>
-                <key>sourceSize</key>
-                <string>{187,324}</string>
-            </dict>
-            <key>capguy/0016.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{2,2},{159,318}}</string>
-                <key>offset</key>
-                <string>{9,2}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{23,1},{159,318}}</string>
-                <key>sourceSize</key>
-                <string>{187,324}</string>
+                <string>{650,650}</string>
             </dict>
         </dict>
         <key>metadata</key>
@@ -220,9 +116,9 @@
             <key>realTextureFileName</key>
             <string>spritesheet.png</string>
             <key>size</key>
-            <string>{884,483}</string>
+            <string>{422,2048}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:86eef592dcdf46a488021b23d655a358:785412f93f400104f22557a3c964a48c:b9a3dd7f67dbb34cb697fcf771a59645$</string>
+            <string>$TexturePacker:SmartUpdate:2edf6e5c2a22a00c3c53315b0e4a62b5:d04af6788064f43cb650831d4e8709b7:b9a3dd7f67dbb34cb697fcf771a59645$</string>
             <key>textureFileName</key>
             <string>spritesheet.png</string>
         </dict>
