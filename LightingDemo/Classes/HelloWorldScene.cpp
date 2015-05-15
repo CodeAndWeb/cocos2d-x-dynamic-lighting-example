@@ -43,14 +43,14 @@ bool HelloWorld::init()
     
     addChild(sprite);
     
-    _effect = LightEffect::create("spritesheet_n.png");
+    _effect = LightEffect::create();
     _effect->retain();
     
     _lightPos = Vec3(200, 200, 100);
     _effect->setLightPos(_lightPos);
     _effect->setLightCutoffRadius(1000);
 
-    sprite->setEffect(_effect);
+    sprite->setEffect(_effect, "spritesheet_n.png");
 
     _lightSprite = Sprite::create("lightbulb.png");
     _lightSprite->setPosition(_lightPos.x, _lightPos.y);

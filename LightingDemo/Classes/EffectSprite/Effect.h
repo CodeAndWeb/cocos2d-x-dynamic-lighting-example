@@ -9,9 +9,6 @@ class Effect : public cocos2d::Ref
 public:
     cocos2d::GLProgramState* getGLProgramState() const { return _glprogramstate; }
     
-    virtual void setSprite(cocos2d::Sprite *sprite) = 0;
-    virtual void prepareForRender() = 0;
-
 protected:
     bool initGLProgramState(const std::string &fragmentFilename);
     Effect();

@@ -33,10 +33,10 @@
 USING_NS_CC;
 
 
-LightEffect* LightEffect::create(const std::string&normalMapFileName)
+LightEffect* LightEffect::create()
 {
     LightEffect *normalMappedSprite = new (std::nothrow) LightEffect();
-    if (normalMappedSprite && normalMappedSprite->init() && normalMappedSprite->initNormalMap(normalMapFileName))
+    if (normalMappedSprite && normalMappedSprite->init())
     {
         normalMappedSprite->autorelease();
         return normalMappedSprite;
@@ -58,29 +58,9 @@ bool LightEffect::init()
     return false;
 }
 
-bool LightEffect::initNormalMap(const std::string& normalMapFileName)
-{
-    auto normalMapTexture = Director::getInstance()->getTextureCache()->addImage(normalMapFileName);
-    getGLProgramState()->setUniformTexture("u_normals", normalMapTexture);
-    return normalMapTexture != nullptr;
-}
-
-void LightEffect::setSprite(Sprite *sprite)
-{
-    _sprite = sprite;
-    Point posRelToSprite = PointApplyAffineTransform(Point(_lightPos.x, _lightPos.y), _sprite->getWorldToNodeAffineTransform());
-    getGLProgramState()->setUniformVec3("u_lightPos", Vec3(posRelToSprite.x, posRelToSprite.y, _lightPos.z));
-    prepareForRender();
-}
-
-void LightEffect::setLightPos(const Vec3& pos)
+void LightEffect::setLightPos(const Vec3 &pos)
 {
     _lightPos = pos;
-    if (_sprite != nullptr)
-    {
-        Point posRelToSprite = PointApplyAffineTransform(Point(_lightPos.x, _lightPos.y), _sprite->getWorldToNodeAffineTransform());
-        getGLProgramState()->setUniformVec3("u_lightPos", Vec3(posRelToSprite.x, posRelToSprite.y, _lightPos.z));
-    }
 }
 
 void LightEffect::setLightColor(const Color3B &color)
@@ -107,29 +87,32 @@ void LightEffect::setLightHalfRadius(float value)
     getGLProgramState()->setUniformFloat("u_halfRadius", _lightHalfRadius);
 }
 
-void LightEffect::prepareForRender()
+void LightEffect::prepareForRender(Sprite *sprite, Texture2D *normalmap)
 {
-    if (_sprite)
-    {
-        auto gl = getGLProgramState();
-        gl->setUniformVec2("u_contentSize", _sprite->getContentSize());
-        
-        SpriteFrame *frame = _sprite->getSpriteFrame();
-        Size untrimmedSize = frame->getOriginalSize();
-        Size trimmedSize = frame->getRect().size;
-        Vec2 framePos = frame->getRect().origin;
-        Size texSize = frame->getTexture()->getContentSize();
+    auto gl = getGLProgramState();
 
-        // set sprite position in sheet
-        gl->setUniformVec2("u_spritePosInSheet", Vec2(framePos.x / texSize.width, framePos.y / texSize.height));
-        gl->setUniformVec2("u_spriteSizeRelToSheet", Vec2(untrimmedSize.width / texSize.width, untrimmedSize.height / texSize.height));
-        gl->setUniformInt("u_spriteRotated", frame->isRotated());
-       
-        // set offset of trimmed sprite
-        Vec2 bottomLeft = frame->getOffset() + (untrimmedSize - trimmedSize) / 2;
-        Vec2 cornerOffset = frame->isRotated() ? Vec2(bottomLeft.y, bottomLeft.x)
-                                               : Vec2(bottomLeft.x, untrimmedSize.height - trimmedSize.height - bottomLeft.y);
-        
-        gl->setUniformVec2("u_spriteOffset", cornerOffset);
-    }
+    gl->setUniformVec2("u_contentSize", sprite->getContentSize());
+
+    Point posRelToSprite = PointApplyAffineTransform(Point(_lightPos.x, _lightPos.y), sprite->getWorldToNodeAffineTransform());
+    gl->setUniformVec3("u_lightPos", Vec3(posRelToSprite.x, posRelToSprite.y, _lightPos.z));
+
+    gl->setUniformTexture("u_normals", normalmap);
+
+    SpriteFrame *frame = sprite->getSpriteFrame();
+    Size untrimmedSize = frame->getOriginalSize();
+    Size trimmedSize = frame->getRect().size;
+    Vec2 framePos = frame->getRect().origin;
+    Size texSize = frame->getTexture()->getContentSize();
+    
+    // set sprite position in sheet
+    gl->setUniformVec2("u_spritePosInSheet", Vec2(framePos.x / texSize.width, framePos.y / texSize.height));
+    gl->setUniformVec2("u_spriteSizeRelToSheet", Vec2(untrimmedSize.width / texSize.width, untrimmedSize.height / texSize.height));
+    gl->setUniformInt("u_spriteRotated", frame->isRotated());
+    
+    // set offset of trimmed sprite
+    Vec2 bottomLeft = frame->getOffset() + (untrimmedSize - trimmedSize) / 2;
+    Vec2 cornerOffset = frame->isRotated() ? Vec2(bottomLeft.y, bottomLeft.x)
+                                           : Vec2(bottomLeft.x, untrimmedSize.height - trimmedSize.height - bottomLeft.y);
+    gl->setUniformVec2("u_spriteOffset", cornerOffset);
+
 }
