@@ -1,0 +1,1 @@
+Copy the complete contents of cocos2d-x-3.6 installation directory here.
